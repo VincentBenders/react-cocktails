@@ -6,33 +6,33 @@ function CreateCocktail() {
     let navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
-        body: '',
-        author: '',
+        description: '',
+        ingredients: '',
     });
 
     async function createProduct() {
         try {
-            const response = await fetch('https://notes.basboot.nl/notes', {
+            const response = await fetch('http://145.24.223.70:8000/cocktails', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    title: formData.name,
-                    body: formData.body,
-                    author: formData.author,
+                    name: formData.name,
+                    description: formData.description,
+                    ingredients: formData.ingredients,
                 })
             })
             console.log(JSON.stringify({
-                title: formData.name,
-                body: formData.body,
-                author: formData.author,
+                name: formData.name,
+                description: formData.description,
+                ingredients: formData.ingredients,
             }));
 
             const data = await response.json();
             console.log(data);
-            navigate('/notes')
+            navigate('/cocktails')
         } catch (error) {
             console.error('Er is een fout opgetreden:', error);
         }
@@ -66,22 +66,22 @@ function CreateCocktail() {
                 />
             </div>
             <div>
-                <label htmlFor="body">body:</label>
+                <label htmlFor="description">description:</label>
                 <input
                     type="text"
-                    id="body"
-                    name="body"
-                    value={formData.body}
+                    id="description"
+                    name="description"
+                    value={formData.description}
                     onChange={handleInputChange}
                 />
             </div>
             <div>
-                <label htmlFor="author">author:</label>
+                <label htmlFor="ingredients">ingredients:</label>
                 <input
                     type="text"
-                    id="author"
-                    name="author"
-                    value={formData.author}
+                    id="ingredients"
+                    name="ingredients"
+                    value={formData.ingredients}
                     onChange={handleInputChange}
                 />
             </div>

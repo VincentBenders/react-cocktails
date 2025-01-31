@@ -4,6 +4,7 @@ import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
 import Cocktails from "./Cocktails.jsx";
 import Cocktail from "./Cocktail.jsx";
+import CreateCocktail from "./CreateCocktail.jsx";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             },
             {
                 path:'/cocktails/create',
-                element:'create component'
+                element:<CreateCocktail />,
             },
             {
                 path:'/cocktails/:id',
