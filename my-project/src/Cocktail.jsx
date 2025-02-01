@@ -56,8 +56,8 @@ function Cocktail(){
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    name:formData.name,
-                    description:formData.description,
+                    name: formData.name,
+                    description: formData.description,
                     ingredients:formData.ingredients
                 })
             })
@@ -99,7 +99,7 @@ function Cocktail(){
             <h1 className={'text-4xl font-semibold'}>{cocktail.name}</h1>
             <p>{cocktail.description}</p>
             <h2 className={'text-2xl'}>ingredients</h2>
-            {cocktail.ingredients}
+            <span>{cocktail.ingredients}</span><br/>
             <button
                 className={'text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:bg-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-yellow-700 dark:hover:bg-yellow-800 dark:focus:ring-bg-yellow-900'}
                 onClick={deleteCocktail}>Delete
